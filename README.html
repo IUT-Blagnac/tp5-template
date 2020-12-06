@@ -672,7 +672,7 @@ pre.rouge {
 <li><a href="#_evolution_du_code_observer_nonpattern">1.2. Evolution du code <code>observer.nonpattern</code></a></li>
 <li><a href="#_evolution_du_code_observer_pattern">1.3. Evolution du code <code>observer.pattern</code></a></li>
 <li><a href="#_push_vs_pull">1.4. Push vs. Pull</a></li>
-<li><a href="#_inconvénent_du_push">1.5. Inconvénent du <em>push</em></a></li>
+<li><a href="#_inconvénient_du_push">1.5. Inconvénient du <em>push</em></a></li>
 <li><a href="#_sélection_des_updates">1.6. Sélection des <em>updates</em></a></li>
 </ul>
 </li>
@@ -686,7 +686,7 @@ pre.rouge {
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><span class="image"><a class="image" href="https://github.com/IUT-Blagnac/cpoa-tp4-template"><img src="https://img.shields.io/github/workflow/status/IUT-Blagnac/cpoa-tp4-template/GitHub%20Classroom%20Workflow?&amp;logo=github-actions&amp;logoColor=white&amp;label=auto+grading" alt="CI status"></a></span>
+<p><span class="image"><a class="image" href="https://github.com/IUT-Blagnac/tp5-template"><img src="https://img.shields.io/github/workflow/status/IUT-Blagnac/tp5-template/GitHub%20Classroom%20Workflow?&amp;logo=github-actions&amp;logoColor=white&amp;label=auto+grading" alt="CI status"></a></span>
 <span class="image"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></span></p>
 </div>
 <div class="paragraph">
@@ -847,9 +847,18 @@ Dans la suite de ce document, à chaque fois que vous trouverez un énoncé comm
 </table>
 </div>
 <div class="paragraph">
-<p>Récupérer l&#8217;archive de projet Eclipse <a href="ObserverInitialCode.zip">ObserverInitialCode.zip</a>. L&#8217;importer dans un workspace Eclipse.
-.	Lire rapidement les et comparer les applications <code>observer.nonpattern</code> et <code>observer.pattern</code>.
-.	Lancer l&#8217;application (<code>Main.main()</code>) et observer ce quelle affiche (un tableau de valeurs numériques).</p>
+<p>Récupérer l&#8217;archive de projet Eclipse <a href="ObserverInitialCode.zip">ObserverInitialCode.zip</a>.
+L&#8217;importer dans un workspace Eclipse.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Lire rapidement les et comparer les applications <code>observer.nonpattern</code> et <code>observer.pattern</code>.</p>
+</li>
+<li>
+<p>Lancer les 2 applications (<code>CourseViewer.main() et `CourseController.main()</code>) et observer ce quelles affichent.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -861,12 +870,24 @@ Dans la suite de ce document, à chaque fois que vous trouverez un énoncé comm
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Obtenez et comparez les 2 diagrammes de classes des deux (<code>TP5.plantuml</code> et <code>TP5-observer.plantuml</code> à placer dans le répertoitre <code>docs</code>).</p>
-</li>
-<li>
-<p>Pourquoi <code>CourseController</code> est-elle aussi un <em>Observer</em> ?</p>
+<p>Obtenez et comparez les 2 diagrammes de classes des deux packages (<code>TP5.plantuml</code> et <code>TP5-observer.plantuml</code> à placer dans le répertoire <code>docs</code>).</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Vous devez obtenir les 2 diagrammes suivants :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TP5.svg" alt="TP5">
+</div>
+<div class="title">Figure 1. <code>observer.nonpattern</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TP5-observer.svg" alt="TP5">
+</div>
+<div class="title">Figure 2. <code>observer.pattern</code></div>
 </div>
 <div class="listingblock">
 <div class="title"><i class="fa fa-github"></i> commit/push</div>
@@ -896,7 +917,7 @@ Pour plus de détails sur les camembers en Swing, cf. <a href="#sf">section fina
 <div class="listingblock">
 <div class="title"><i class="fa fa-github"></i> commit/push</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="shell">fix <span class="c">#1.2: Add Pie Chart</span></code></pre>
+<pre class="rouge highlight"><code data-lang="shell">fix <span class="c">#1.2: Add Pie Chart in nonPattern</span></code></pre>
 </div>
 </div>
 </div>
@@ -911,7 +932,7 @@ Pour plus de détails sur les camembers en Swing, cf. <a href="#sf">section fina
 <div class="listingblock">
 <div class="title"><i class="fa fa-github"></i> commit/push</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="shell">fix <span class="c">#1.3: Add Observer version</span></code></pre>
+<pre class="rouge highlight"><code data-lang="shell">fix <span class="c">#1.3: Add Pie Chart in Pattern</span></code></pre>
 </div>
 </div>
 </div>
@@ -931,7 +952,7 @@ Pour plus de détails sur les camembers en Swing, cf. <a href="#sf">section fina
 </div>
 </div>
 <div class="sect2">
-<h3 id="_inconvénent_du_push">1.5. Inconvénent du <em>push</em></h3>
+<h3 id="_inconvénient_du_push">1.5. Inconvénient du <em>push</em></h3>
 <div class="paragraph">
 <p>Dans cette nouvelle version, si les programmes ont plus de 1000 cours, et si l&#8217;un seulement évolue, <code>notifyObservers()</code>
 pousse toutes les informations sur tous les observateurs!</p>
@@ -1045,7 +1066,7 @@ It is drawn at location (xOffset, yOffset) and with the radius specified to be o
 <div id="footer">
 <div id="footer-text">
 Version 20.1 2020-12-06<br>
-Last updated 2020-12-06 10:50:43 +0100
+Last updated 2020-12-06 11:22:42 +0100
 </div>
 </div>
 </body>

@@ -208,16 +208,26 @@ endif::[]
 
 :numbered:
 
-Récupérer l'archive de projet Eclipse link:ObserverInitialCode.zip[ObserverInitialCode.zip]. L'importer dans un workspace Eclipse.
+Récupérer l'archive de projet Eclipse link:ObserverInitialCode.zip[ObserverInitialCode.zip]. 
+L'importer dans un workspace Eclipse.
+
 .	Lire rapidement les et comparer les applications `observer.nonpattern` et `observer.pattern`.
-.	Lancer l'application (`Main.main()`) et observer ce quelle affiche (un tableau de valeurs numériques).
+.	Lancer les 2 applications (`CourseViewer.main() et `CourseController.main()`) et observer ce quelles affichent.
 
 == Exercices
 
 === Reverse Engineering
 
-.	Obtenez et comparez les 2 diagrammes de classes des deux (`TP5.plantuml` et `TP5-observer.plantuml` à placer dans le répertoitre `docs`).
-.   Pourquoi `CourseController` est-elle aussi un _Observer_ ?
+.	Obtenez et comparez les 2 diagrammes de classes des deux packages (`TP5.plantuml` et `TP5-observer.plantuml` à placer dans le répertoire `docs`).
+
+Vous devez obtenir les 2 diagrammes suivants :
+
+.`observer.nonpattern`
+image::TP5.svg[TP5]
+
+.`observer.pattern`
+image::TP5-observer.svg[TP5]
+
 
 .ToDo
 ifndef::backend-pdf[.pass:[<i class="fa fa-github"></i>] commit/push]
@@ -239,7 +249,7 @@ ifndef::backend-pdf[.pass:[<i class="fa fa-github"></i>] commit/push]
 ifdef::backend-pdf[.icon:github[] commit/push]
 [source,shell]
 ....
-fix #1.2: Add Pie Chart
+fix #1.2: Add Pie Chart in nonPattern
 ....
 
 === Evolution du code `observer.pattern`
@@ -253,7 +263,7 @@ ifndef::backend-pdf[.pass:[<i class="fa fa-github"></i>] commit/push]
 ifdef::backend-pdf[.icon:github[] commit/push]
 [source,shell]
 ....
-fix #1.3: Add Observer version
+fix #1.3: Add Pie Chart in Pattern
 ....
 
 === Push vs. Pull
@@ -270,7 +280,7 @@ ifdef::backend-pdf[.icon:github[] commit/push]
 fix #1.4: Add push version
 ....
 
-=== Inconvénent du _push_
+=== Inconvénient du _push_
 
 Dans cette nouvelle version, si les programmes ont plus de 1000 cours, et si l'un seulement évolue, `notifyObservers()` 
 pousse toutes les informations sur tous les observateurs! 
