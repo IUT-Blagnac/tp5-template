@@ -27,3 +27,5 @@ target
 .factorypath
 .project
 .settings
+.gradle
+Gemfile.lock
